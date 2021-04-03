@@ -1,0 +1,298 @@
+<!--
+========================
+pos panel (RedeemMainA)
+pos="X,Y" 
+X - горизонтально
+Y - Вертикально
+========================
+
+-->
+<config>
+<setattribute xpath="/windows/window[@name='serverjoinrulesdialog']/panel[@name='content']/label[@name='labelConfirmationText']" name="font_size">23</setattribute>
+<setattribute xpath="/windows/window[@name='serverjoinrulesdialog']/panel[@name='content']/sprite[@name='backgroundMain']" name="globalopacitymod">1.80</setattribute>
+	<append xpath="/windows">
+		<window name="RedeemMainA"  depth="51" width="397" height="688"  cursor_area="true" >
+			<panel depth="23" controller="CharacterFrameWindow"  pos="-650,50" width="500" height="62" disableautobackground="true">
+				<panel name="header" pos="99999,99999" width="0" height="0">
+					<sprite depth="2" name="windowIcon" pos="99999,99999" width="0" height="0"/>
+					<label depth="2" name="characterName" pos="99999,99999" width="0" height="0"/>
+					<sprite depth="2" name="windowIcon" pos="99999,99999" width="0" height="0"/>
+					<label depth="2" name="levelNumber" pos="99999,99999" width="0" height="0"/>
+				</panel>			
+				<rect depth="2" name="searchControls" width="327" height="43" pos="349,320">
+					<texture depth="9" pos="260,80" width="420" height="76" pivot="center" texture="@https://lh-games.ru/img/logo-green.png"/>
+					<sprite depth="8" name="backgroundMain" pos="99999,99999" width="0" height="0"/>
+					<button name="characterButton" style="press" width="1" height="1" pos="50,-22" collider_scale="80.0" pivot="center" selected="true">
+						
+						<!--<texture depth="5" width="70" height="82" pivot="center" texture="@https://i.imgur.com/80qEtwV.png"/>-->
+						<label depth="5" width="100" height="40" pivot="center" justify="center" text="Page 1"/>
+						<sprite depth="5" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="100" height="40" color="[lightGrey]" type="sliced" pivot="center" globalopacity="true" globalopacitymod="1.8" />						
+					</button>
+					<button name="statButton" style="press" width="1" height="1" pos="500,-22" collider_scale="80.0" pivot="center">
+						<!--<texture depth="5" width="-70" height="82" pivot="center" texture="@https://i.imgur.com/80qEtwV.png"/>-->
+						<label depth="5" width="100" height="40" pivot="center" justify="center" text="Page 2"/>
+						<sprite depth="5" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="100" height="40" color="[lightGrey]" type="sliced" pivot="center" globalopacity="true" globalopacitymod="1.8" />
+					</button>		
+					<button depth="4" name="coreStatButton" style="icon30px, press" pos="99999,99999" width="0" height="0" sprite="ui_game_symbol_trophy" pivot="center"/>
+				</rect>
+				<rect>
+					<panel name="previewFrame" pos="99999,99999" width="0" height="0">
+						<rect>
+							<sprite depth="8" name="backgroundMain" pos="99999,99999" width="0" height="0"/>
+							<texture depth="2" name="playerPreview" material="Materials/Transparent Colored" pos="99999,99999" size="1,1"/>
+						</rect>
+					</panel>
+					<panel name="equipment" pos="99999,99999" width="0" height="0">
+						<grid name="inventory"/>
+					</panel>
+				</rect>
+				<rect visible="{showcharacter}" pos="485,200">
+					<lootboxentry text_name="Правила" posx="0" posy="0" name="Правила Сервера" description="[DCA103]1. Основное[-]
+					1.1. Администратор всегда действует в интересах сервера. Любое из его действий - действие во благо развития сервера.
+					1.2. Зайдя на сервер вы автоматически соглашаетесь с данными правилами.
+					1.4. Запрещено выдавать себя за администрацию сервера или её помощников.
+					1.5. Запрещено разжигание межрасовой, межнациональной, межрелигиозной розни, дискриминация по половым, религиозным, физиологическим и другим признакам.
+					1.6 Дестабилизация сервера или попытки обрушить сервер, путем специально вызванных лагов или подобных действий.
+					1.7. Игра в Альфа тесте и ответственности никто не несет за возможные ошибки игры					
+					[DCA103]2. Игровой процесс[-]
+					2.1. Запрещены любые виды не честной игры (Программные либо использование ошибок Альфа игры.)
+					2.2. Запрещены любые виды мошенничества
+					2.3 Запрещено проникать в дома (без разрешения хозяина)
+					2.3.1 Запрещено находится на крыше дома.(без разрешения хозяина)
+					2.3.2 Запрещено наносить ущерб чужому имуществу.
+					2.3.3. Запрещено: лутать, разрушать, вносить изменения в чужие постройки без разрешения хозяина.
+					2.3.4. Постройки без land claim block считаются ничейными.(уточняйте на онлайн карте)
+					2.3.5. Запрещено призывать зомби рядом с чужой базой. (Делать это намеренно чтобы базу сломали).
+					2.4. Запрещено строительство Городах ,торговцев (в их квадратах). На онлайн карте, можно найти место жительства и нажать Region files. Если Вы в 1 квадрате города и торговца - строиться там нельзя!
+					2.5. Запрещено строительство в красных зонах.(см. Онлайн карту - Region Remove,Adv.Claims Zone).
+					2.6. Запрещено убивать игроков и расставлять мины вне своих защитных укреплений.
+					2.7. Запрещено надоедание игрокам (стрельба без урона по игроку постоянная, помеха в строительстве и прочее)
+					2.8 Запрещена посадка деревьев в глобальных масштабах.(Вызывающие просадки ФПС)
+					2.9 Квестовые задания и лут исключительно для игроков которые его активировали.
+					2.9.1 Запрещено мешать другим игрокам лутать дома или выполнять квесты.(Игрок должен попросить покинуть здание)
+					2.9.2 Если игрок не захотел по требованию уходить, то нужно отправить репорт ($calladmin ник игрока и суть проблемы) Так-же отправить скриншот в лс админу.
+					2.9.3 Если вы не заметили что лутается другой игрок в здании, а он уже забрал лут, то рассмотрению не подлежит.
+					2.10 Аирдроп - те кто первый взял того и дроп"/>
+					<lootboxentry text_name="Правила 2" posx="280" posy="0" name="Правила Сервера 2" description="[DCA103]3. Игровой чат / Дискорд[-]
+					3.1. Запрещены флуд, реклама.
+					3.2. Запрещены чрезмерное количество жаргонных слов, грубые и нецензурные слова или выражения.
+					3.3 Запрещены оскорбления, угрозы, клевета.
+					3.4 Запрещено размещение провоцирующих сообщений по отношению к игрокам, с целью вызвать конфликты, взаимные оскорбления.
+					3.5 Запрещено использование выражений, унижающих человеческое достоинство и/или несущих оскорбительную охарактеризацию личности.
+					3.6 Запрещено обсуждение действий Администраторов и Модераторов на сервере, обсуждение допускается только в лс с админом.
+					3.7 Сообщения, содержащие любые ссылки кроме тех, что ведут на официальный сайт/форум/дискорд проекта.
+					[DCA103]4. Игровые ники[-]
+					4.1 Никнейм не должен содержать в себе оскорбительных слов, мата, слов, имеющих явный порнографический или провокационный характер, ссылок, рекламы.
+					4.2. Запрещено использовать нечитаемые ники состоящие только из символов.
+					[DCA103]5. Форс-мажоры (непредсказуемые события)[-]
+					5.1. Если игрок при дисконнекте теряет что-либо - это форс-мажор и возврату не подлежит.
+					5.2. Если вы впустили к себе игрока жить и он вас обокрал - это форс-мажор и расследованию не подлежит.
+					5.3. Игра в Альфа тесте и ответственности никто не несет за возможные ошибки игры.
+					[DCA103]6. Администратор онлайн[-]
+					6.1. По мере возможностей, администраторы играют бок о бок с игроками.
+					6.2. Любые попытки клянчить что-либо.					
+					Соблюдайте правила, уважайте друг-друга... Помните вы играете не в сингле, и кроме вас на сервере есть другие игроки...
+					Администрация оставляет за собой право дополнять или редактировать правила по своему усмотрению без дополнительного уведомления."/>
+					<lootboxentry text_name="Рекомендации" posx="0" posy="-120" name="Рекомендации" description="[DCA103]7. Рекомендации[-]
+					7.1. Все средства передвижения используются под ответственностью самих игроков. Администрация сервера ГАРАНТИРУЕТ - средство пропадёт и лут тоже. Разработчики в курсе ситуации, когда ситуация изменится - не известно. Если пропало что-либо (транспорт или лут внутри транспорта) - даже не пишите, мы не отвечаем за ошибки игры. Мы скачиваем сервер с официального источника и просто ЗАПУСКАЕМ. Всё что тупит, тормозит, не так как хотелось - все на форум разработчиков.
+					7.2. Не рекомендуем категорически селиться в ЛЮБЫХ домах. Причина проста - квесты выдаёт торговец на зачистку домов.
+					7.3. Закрывайте дома чтобы постороние люди не могли проникнуть к вам внутрь.
+					7.4. Если вы попали в чужой дом(случился баг или еще что)незамедлительно используйте команду для телепорта.
+					7.5. Убирайте личный транспорт в ящик или в инвентарь! Не оставляйте его на улице или у своего дома."/>
+					<lootboxentry text_name="Комманды" posx="280" posy="-120" name="Комманды" description="[E23A04]Список команд может отличатся[-]
+					[DCA103]/weathervote[-] - Запускает голосование за смену погоды.
+					[DCA103]vote[-] - Для получение бонуса за голосование в мониторинге.
+					[DCA103]calladmin[-] - Сообщить админу о проблеме(Пример: calladmin текст (calladmin торговец забоговался).
+					[DCA103]balance[-] - Баланс донатных монет.
+					[DCA103]!spawn[-] - Телепорт на спавн.
+					[DCA103]/top[-] - Топ игроков.
+					[DCA103]/sethome[-] - Установить дом(Вам нужно находится в пределах своего собственного клайма).
+					[DCA103]/bloodmoon[-] - Узнать сколько дней до красной луны.
+					[DCA103]/mutevote[-] - Запуск голосование за мут игрока.(Требуется 5 игроков, 3 должны пороголовать за 1 вариант)
+					[DCA103]/kickvote[-] - Запуск голосование за кик игрока. (Требуется 5 игроков, 3 должны пороголовать за 1 вариант)
+					[DCA103]/stuck[-] - Если вы застряли.(Не может быть использовано внутри клайма другого игрока.)
+					[DCA103]/market[-] - Телепорт в торговую зону. /marketback - вернет вас обратно (Вы должны находится на месте маркета тп)
+					[DCA103]/bike[-] - ТП велосипеда 
+					[DCA103]/minibike[-] - ТП минибайка
+					[DCA103]/jeep[-] - ТП авто
+					[DCA103]/gyro[-] - ТП вертолета
+					Чтобы использовать команду, вам нужно находится в пределах своего собственного клайма и быть на ТС, чтобы зарегистрировать этот ТС для ТП напишите команду подходящую для транспорта.
+					[DCA103]/suicide[-] - Убить персонажа.
+					[DCA103]/friend[-] - Телепорт к другу. (Пример: /friend 348 (348 это ид друга))Чтобы узнать ид: в консоле на F1 пишем lpi Друг должен принять тп /accept"/>
+					<lootboxentry text_name="Информация" posx="0" posy="-240" name="Информация" description="Рестарты:12:00,16:00,21:00,02:00
+					[DC3803]Внимание!Не оставляйте транспорт на улице! Сброс каждые 3 дня![-]
+					------------------------------------------------------------------------
+					[E23A04]Admin: sLim Long[-]
+					[65CD03]Support: Ex[-]
+					[65CD03]Support: I am Groot[-]
+					------------------------------------------------------------------------
+					Wipe 19.08.20
+					------------------------------------------------------------------------
+					vk.com/7dtd_lh
+					lh-games.ru"/>
+					<lootboxentry text_name="Донат" posx="280" posy="-240" name="Донат" description="[DCA103]5 Наборов Книг(на выбор)[-] = 500 Р
+					[DCA103]Набор всех книг[-] = 2500 Р
+					------------------------------------------------------------------------
+					[DCA103]Home Premium[-] = 200 ₽ (Дает возможность установить 2 точки тп)
+					[DCA103]LvL[-] = 6 Р 1LVL (Поднятие левела игрока.)
+					[DCA103]Перенос базы[-] = 8 Р 1м² (Перенос базы в доступное место.)
+					[DCA103]Супер инструмент[-] = 1500 Р (Дает возможность ломать блоки с 1 удара(есть ограничения в использовании))
+					[DCA103]Цветной ник[-] = 100 Р (Дает возможность изменить цвет ника в чате и добавить [тег])
+                    ------------------------------------------------------------------------
+					[65CD03]Резерв слоты:[-]
+					[DCA103]1 Неделя[-] = 120 Р
+					[DCA103]1 Месяц[-] = 300 Р
+					[DCA103]3 Месяца[-] = 750 Р
+					[DCA103]6 Месяца[-] = 1850 Р
+					[DCA103]1 Год[-] = 2850 Р
+					------------------------------------------------------------------------
+					Так же есть онлайн магазин предметов.
+					------------------------------------------------------------------------
+					Для приобретения доната писать Админу (sLim Long)"/>
+					<lootboxentry text_name="О сервере" posx="0" posy="-360" name="О сервере" description="Простой сервер со средней сложностью.
+					------------------------------------------------------------------------
+					[DCA103]На сервере добавлено:[-] 
+					Декор.(Для крафта предметов сделайте Workbench Decor)
+					Квесты тира 6, их можно купить у торговца.
+					------------------------------------------------------------------------
+					[DCA103]На сервере:[-]
+					Увеличены кол-во зомби."/>
+					<!--<lootboxentry text_name="COMING SOON" posx="280" posy="-360" name="COMING SOON" description=""/>
+					<lootboxentry text_name="COMING SOON" posx="0" posy="-480" name="COMING SOON" description=""/>
+					<lootboxentry text_name="COMING SOON" posx="280" posy="-480" name="COMING SOON" description=""/>
+					<lootboxentry text_name="COMING SOON" posx="0" posy="-600" name="COMING SOON" description=""/>
+					<lootboxentry text_name="COMING SOON" posx="280" posy="-600" name="COMING SOON" description=""/>-->
+				</rect>
+				<rect visible="{showstats}" pos="485,200">
+					<lootboxentry text_name="Rules ENG" posx="0" posy="0" name="Rules ENG" description="[DCA103]1. General[-]
+					1.1. The administrator always acts in the best interest of the server. Any of his actions is an action for the benefit of the server development.
+					1.2. By logging into the server, you automatically agree with these rules.
+					1.4. It is forbidden to impersonate the server administration or its assistants.
+					1.5. The incitement of interracial, interethnic, interreligious hatred, discrimination on the basis of sex, religious, physiological and other grounds is prohibited.
+					1.6 Destabilization of the server or attempts to bring down the server through specially caused lags or similar actions.
+					1.7. Playing in the Alpha test and no one bears responsibility for possible game errors
+					[DCA103]2. Game process[-]
+				    2.1. Any kind of unfair play is prohibited (Software or use of Alpha game bugs.)
+					2.2. Any kind of fraud is prohibited
+					2.3 It is forbidden to enter houses (without the permission of the owner)
+					2.3.1 It is forbidden to be on the roof of the house. (Without the permission of the owner)
+					2.3.2 It is forbidden to damage someone else's property.
+					2.3.3. Forbidden: loot, destroy, make changes to other people's buildings without the permission of the owner.
+					2.3.4. Buildings without a land claim block are considered no-man's. (Check on the online map)
+					2.3.5. It is forbidden to summon zombies near someone else's base. (Do this on purpose to break the base).
+					2.4. It is forbidden to build Cities, merchants (in their squares). On the online map, you can find your place of residence and click Region files. If you are in 1 square of a city and a merchant, you cannot build there!
+					2.5. Prohibited construction in red zones. (See Online map - Region Remove, Adv.Claims Zone).
+					2.6. It is forbidden to kill players and place mines outside of their defenses.
+					2.7. It is forbidden to annoy players (constant shooting without damage at the player, interference in construction, etc.)
+					2.8 Prohibited tree planting on a global scale. (Causing subsidence FPS)
+					2.9 Quest tasks and loot exclusively for the players who activated it.
+					2.9.1 It is forbidden to prevent other players from looting houses or completing quests. (The player must ask to leave the building)
+					2.9.2 If the player did not want to leave on demand, then you need to send a report ($calladmin the player's nickname and the essence of the problem). Also send a screenshot to the admin.
+					2.9.3 If you have not noticed that another player is looting in the building, and he has already taken the loot, then it is not subject to consideration.
+					2.10 Airdrop - those who took the first one and drop"/>
+					<lootboxentry text_name="Rules ENG 2" posx="280" posy="0" name="Rules ENG 2" description="[DCA103]3. Game Chat / Discord[-]
+					3.1. Flood and advertising are prohibited.
+					3.2. An excessive amount of slang words, rude and obscene words or expressions are prohibited.
+					3.3 Prohibited insults, threats, libel.
+					3.4 It is forbidden to post provocative messages in relation to players in order to cause conflicts, mutual insults.
+					3.5 It is forbidden to use expressions that demean human dignity and / or carry an offensive characterization of the person.
+					3.6 It is forbidden to discuss the actions of Administrators and Moderators on the server, discussion is allowed only in LAN with the administrator.
+					3.7 Messages containing any links other than those that lead to the official site / forum / discord of the project.
+					[DCA103]4. Game nicknames[-]
+					4.1 The nickname must not contain offensive words, obscenities, words that are obviously pornographic or provocative, links, advertisements.
+					4.2. It is forbidden to use unreadable nicknames consisting only of symbols.
+					[DCA103]5. Force majeure (unpredictable events)[-]
+					5.1. If a player loses something when disconnecting, this is force majeure and cannot be returned.
+					5.2. If you allowed a player to live with you and he robbed you, this is force majeure and cannot be investigated.
+					5.3. Playing in the Alpha test and no one bears responsibility for possible errors in the game.
+					[DCA103]6. Online administrator[-]
+					6.1. Whenever possible, administrators play side by side with the players.
+					6.2. Any attempts to beg for something. Follow the rules, respect each other ... 
+					Remember, you are not playing in a single, and besides you there are other players on the server ...
+					The administration reserves the right to supplement or edit the rules at its own discretion without further notice."/>
+					<lootboxentry text_name="Recommendations" posx="0" posy="-120" name="Recommendations" description="[DCA103]7. Recommendations[-]
+					7.1. All vehicles are used under the responsibility of the players themselves. The server administration GUARANTEES - the tool will disappear and the loot will also be lost. The developers are aware of the situation, when the situation will change - it is not known. If something is missing (transport or loot inside the transport) - do not even write, we are not responsible for game errors. We download the server from the official source and just START. Everything that dulls, slows down, not as it wanted - everything to the developers forum.
+					7.2. We do not recommend categorically settling in ANY houses. The reason is simple - the quests are issued by the merchant for cleaning houses.
+					7.3. Close houses so that strangers cannot get inside you.
+					7.4. If you find yourself in someone else's house (there was a bug or something else), immediately use the command to teleport.
+					7.5. Put your personal transport in a box or in your inventory! Do not leave it outside or outside your home."/>
+					<lootboxentry text_name="Commands" posx="280" posy="-120" name="Commands" description="[E23A04]Command list may differ[-]
+					[DCA103]/weathervote[-] - Starts voting for weather change.
+					[DCA103]$vote[-] - To receive a bonus for voting in monitoring.
+					[DCA103]$calladmin[-] - Report a problem to the admin (Example: $ calladmin text ($ calladmin the merchant forgot).
+					[DCA103]$balance[-] - Balance of donated coins.
+					[DCA103]!spawn[-] - Teleport to spawn.
+					[DCA103]/top[-] - Top players
+					[DCA103]/sethome[-] - Set home (you need to be within your own claim).	
+					[DCA103]/home[-] - Teleport to home.					
+					[DCA103]/bloodmoon[-] - Find out how many days until the red moon.
+					[DCA103]/mutevote[-] - Start voting for the player's moot. (Requires 5 players, 3 must vote for 1 option)
+					[DCA103]/kickvote[-] - Start voting for the player's kick. (Requires 5 players, 3 must threshold for 1 option)
+					[DCA103]/stuck[-] - If you are stuck. (Cannot be used inside another player's claim.)
+					[DCA103]/market[-] - Teleport to the trade area. / marketback - will return you back (you must be at the place of the TP market)
+					[DCA103]/bike[-] - TP of the bike
+					[DCA103]/minibike[-] - TP minibike
+					[DCA103]/jeep[-] - TP auto
+					[DCA103]/gyro[-] - helicopter TP
+					To use the command, you need to be within your own claim and be on the vehicle, to register this vehicle for the TP, write a command suitable for the vehicle.
+					[DCA103]/suicide[-] - Kill the character.
+					[DCA103]/friend[-] - Teleport to a friend. (Example: / friend 348 (348 is a friend's id)) To find out the id: in the console on F1, write lpi A friend must accept TP / accept"/>
+					<lootboxentry text_name="Info" posx="0" posy="-240" name="Info" description="Restarts: 12:00,16:00,21:00,02:00
+					[DC3803]Warning: Do not leave vehicles on the street! Reset every 3 days![-]
+					------------------------------------------------------------------------
+					[E23A04]Admin: sLim Long[-]
+					[65CD03]Support: Ex, I am Groot[-]
+					------------------------------------------------------------------------
+					Wipe 08/19/20
+					------------------------------------------------------------------------
+					vk.com/7dtd_lh
+					lh-games.ru"/>
+					<lootboxentry text_name="Donat" posx="280" posy="-240" name="Donat" description="[DCA103]5 Sets of Books (optional)[-] = 7 $
+					[DCA103]Set of all books[-] = 35 $
+					------------------------------------------------------------------------
+					[DCA103]Home Premium[-] = 3 $ (Allows you to set 2 points of TP)
+					[DCA103]LvL[-] = 0.30 $ 1LVL (Raising the player's level.)
+					[DCA103]Transfer base[-] = 0.50 $ 1m² (Transfer base to an accessible place.)
+					[DCA103]Super tool[-] = 20 $ (Gives the ability to break blocks with 1 hit (there are restrictions on use))
+					[DCA103]Color nickname[-] = 1.50 $ (Allows you to change nickname color in chat and add [tag])
+                    ------------------------------------------------------------------------
+					[65CD03]Reserved slots:[-]
+					[DCA103]1 Week[-] = 2 $
+					[DCA103]1 Month[-] = 4 $
+					[DCA103]3 Months[-] = 10 $
+					[DCA103]6 Months[-] = 25 $
+					[DCA103]1 Year[-] = 38 $ 
+					------------------------------------------------------------------------
+					There is also an online item store.
+					------------------------------------------------------------------------
+					[65CD03]Payment only through (Pay Pal)[-]
+					To purchase donation, write to the Admin (sLim Long)"/>
+					<lootboxentry text_name="About" posx="0" posy="-360" name="About" description="A simple server with medium difficulty.
+					------------------------------------------------------------------------
+					[DCA103]Added on the server:[-]
+					Decor (For crafting items, make a Workbench Decor)
+					Tier 6 quests can be purchased from a merchant.
+					------------------------------------------------------------------------
+					[DCA103]On the server:[-]
+					The number of zombies has been increased."/>
+					<!--<lootboxentry text_name="COMING SOON" posx="280" posy="-360" name="COMING SOON" description=""/>
+					<lootboxentry text_name="COMING SOON" posx="0" posy="-480" name="COMING SOON" description=""/>
+					<lootboxentry text_name="COMING SOON" posx="280" posy="-480" name="COMING SOON" description=""/>
+					lootboxentry text_name="COMING SOON" posx="0" posy="-600" name="COMING SOON" description=""/>
+					<lootboxentry text_name="COMING SOON" posx="280" posy="-600" name="COMING SOON" description=""/>-->
+				</rect>
+				<rect visible="{showcore}"/>
+			</panel>
+		</window>
+		<window name="RedeemOverlay" anchor="LeftTop" depth="40" >
+			<panel name="content" width="800" height="76" depth="10" pos="0,20" disableautobackground="true">
+			<texture on_drag="true" on_press="true" size="800,76" texture="@https://lh-games.ru/server/QR.png" depth="11" pos="500,-950"/>
+				<!--<rect name="background" width="1920" height="1080" depth="11" pos="0, 0" >		
+				</rect>-->
+			</panel>			
+			<sprite depth="-10" color="0,0,0,255"  pos="500,0" type="sliced" width="800" height="1036" globalopacity="true" globalopacitymod="1.2" />
+		</window>
+
+
+	</append>
+</config>

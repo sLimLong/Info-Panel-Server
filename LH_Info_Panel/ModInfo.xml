@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="LH Info Panel" />
+		<Description value="Info Panel Server " />
+		<Author value="sLimLong,Snufkin" />
+		<Version value="0.1.0" compat="20.5" />
+	</ModInfo>
+</xml>

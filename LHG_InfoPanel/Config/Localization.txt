@@ -1,0 +1,17 @@
+Key,Context,English
+
+
+link1url,Web,https://d.mhwh.ru/
+link1hover,UI,DISCORD
+link2url,Web,https://shop.mhwh.ru/store/id-61
+link2hover,UI,Сайт
+Text1,UI,""
+Text2,UI,""
+Text3,UI,""
+Text4,UI,""
+Text5,UI,""
+Text6,UI,""
+Text7,UI,""
+Text8,UI,""
+Text9,UI,""
+Text10,UI,""

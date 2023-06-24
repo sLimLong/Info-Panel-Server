@@ -1,0 +1,9 @@
+<configs>
+<append xpath="/xui/ruleset">
+	<window_group name="serverinfowindow">
+			<window name="IPSMainA"/>
+			<window name="IPSOverlay"/>
+	</window_group>
+
+</append>
+</configs>

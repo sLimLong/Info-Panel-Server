@@ -1,0 +1,47 @@
+<config>
+	<append xpath="/controls">
+		<infopanel>
+			<rect controller="CharacterFrameWindow" pos="${posx},${posy}">
+				<panel name="header" pos="99999,99999" width="0" height="0">
+					<sprite depth="2" name="windowIcon" pos="99999,99999" width="0" height="0"/>
+					<label depth="2" name="characterName" pos="99999,99999" width="0" height="0"/>
+					<sprite depth="2" name="windowIcon" pos="99999,99999" width="0" height="0"/>
+					<label depth="2" name="levelNumber" pos="99999,99999" width="0" height="0"/>
+				</panel>
+				<rect depth="1" name="searchControls">
+					<sprite depth="8" name="backgroundMain" pos="99999,99999" width="0" height="0"/>
+					<button depth="8" visible="{showstats}" name="characterButton" style="press" width="1" height="1" pivot="center" collider_scale="9000" selected="true">
+						<sprite color="0,0,0,200" type="sliced" width="99999" height="99999" pos="-700,1500" pivot="center" globalopacity="true" />
+					</button>
+					<button depth="-11" name="statButton" style="press" width="3" hoverscale="1.075" height="1" pos="0,0" collider_scale="80.0" pivot="center" sound="[paging_click]" on_hover="true"  sound_play_on_hover="[default_hover]" tooltip_key="${button_name}">
+						<sprite name="borderButton" depth="9" sprite="menu_empty3px" pos="-77,30" width="155" height="59" color="[black]" type="sliced" fillcenter="false" />
+						<sprite name="backgroundButton" sprite="menu_empty3px" pos="1,0" width="151" height="55" color="[darkGrey]" type="sliced" pivot="center" globalopacity="true" globalopacitymod="1.8" />
+						<sprite name="iconButton" depth="9" pos="0,0" pivot="center" sprite="${icon}" color="${color}" style="icon32px" size="36,36"/>
+					</button>
+					<button depth="4" name="coreStatButton" style="icon30px, press" pos="99999,99999" width="0" height="0" sprite="ui_game_symbol_trophy" pivot="center"/>
+				</rect>
+				<rect>
+					<panel name="previewFrame" pos="99999,99999" width="0" height="0">
+						<rect>
+							<sprite depth="8" name="backgroundMain" pos="99999,99999" width="0" height="0"/>
+							<texture depth="2" name="playerPreview" pos="99999,99999" size="1,1"/>
+						</rect>
+					</panel>
+					<panel name="equipment" pos="99999,99999" width="0" height="0">
+						<grid name="inventory"></grid>
+					</panel>
+				</rect>
+				<rect visible="{showcharacter}"></rect>
+				<rect depth="62" pos="${-350-posx},${150-posy}"  visible="{showstats}">
+					<sprite depth="63" color="[black]" type="sliced" width="1020" height="800" globalopacity="true" globalopacitymod="1.8" />
+					<sprite depth="64" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="1020" height="800" color="[black]" type="sliced" fillcenter="false" />
+					<sprite depth="66" color="[black]" type="sliced" width="1020" height="50" globalopacity="true" />
+					<sprite name="border" depth="66" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" />
+					<label depth="67" name="nameText" pos="6,-5" text_key="${name}"  width="1020" height="338" />
+					<label depth="67" name="description	Text" pos="6,-50" text_key="${description}" parse_actions="true" width="996" height="746" />					
+				</rect>
+				<rect visible="{showcore}"></rect>
+			</rect>
+		</infopanel>		
+	</append>
+</config>

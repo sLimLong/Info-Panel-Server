@@ -40,15 +40,15 @@ Y - Вертикально
 					</panel>
 				</rect>
 				<rect visible="{showcharacter}" pos="485,200">
-					<infopanel button_name="Правила 1" icon="ui_game_symbol_twitch_history" color="[white]" posx="0" posy="0" name="Правила сервера 1" description="Text1"/> 						<!--sprite/color-->	
+					<infopanel button_name="b_name1" icon="ui_game_symbol_twitch_history" color="[white]" posx="0" posy="0" name="b_name1" description="Text1"/> 						<!--sprite/color-->	
 					<!-- <infopanel  button_name="Button1" posx="0" posy="0" desc="Textdesc1" color="[white]" style="header.name"/> -->
-					<infopanel button_name="Правила 2" icon="ui_game_symbol_twitch_history" color="[white]" posx="280" posy="0" name="Правила сервера 2" description="Text2"/>
-					<infopanel button_name="Рекомендации" icon="ui_game_symbol_talk" color="[white]" posx="0" posy="-120" name="Рекомендации" description="Text3"/>
-					<infopanel button_name="Команды" icon="ui_game_symbol_twitch_confused_controls" color="[white]" posx="280" posy="-120" name="Команды" description="Text4"/>
-					<infopanel button_name="Информация" icon="ui_game_symbol_candy_nerd_tats" color="[white]" posx="0" posy="-240" name="Информация" description="Text5"/>
-					<infopanel button_name="Донат" icon="ui_game_symbol_coin" color="[white]" posx="280" posy="-240" name="Донат" description="Text6"/>
-					<infopanel button_name="О сервере" icon="server_stock" color="[white]" posx="0" posy="-360" name="О сервере" description="Text7"/>
-					<infopanel button_name="Помощь cерверу" icon="ui_game_symbol_pills" color="[white]" posx="280" posy="-360" name="Помощь cерверу" description="Text8"/>					
+					<infopanel button_name="b_name2" icon="ui_game_symbol_twitch_history" color="[white]" posx="280" posy="0" name="b_name2" description="Text2"/>
+					<infopanel button_name="b_name3" icon="ui_game_symbol_talk" color="[white]" posx="0" posy="-120" name="b_name3" description="Text3"/>
+					<infopanel button_name="b_name4" icon="ui_game_symbol_twitch_confused_controls" color="[white]" posx="280" posy="-120" name="b_name4" description="Text4"/>
+					<infopanel button_name="b_name5" icon="ui_game_symbol_candy_nerd_tats" color="[white]" posx="0" posy="-240" name="b_name5" description="Text5"/>
+					<infopanel button_name="b_name6" icon="ui_game_symbol_coin" color="[white]" posx="280" posy="-240" name="b_name6" description="Text6"/>
+					<infopanel button_name="b_name7" icon="server_stock" color="[white]" posx="0" posy="-360" name="b_name8" description="Text7"/>
+					<infopanel button_name="b_name8" icon="ui_game_symbol_pills" color="[white]" posx="280" posy="-360" name="b_name9" description="Text8"/>					
 					<!--<infopanel button_name="COMING SOON" posx="0" posy="-480" name="COMING SOON" description=""/>
 					<infopanel button_name="COMING SOON" posx="280" posy="-480" name="COMING SOON" description=""/>
 					<infopanel button_name="COMING SOON" posx="0" posy="-600" name="COMING SOON" description=""/>

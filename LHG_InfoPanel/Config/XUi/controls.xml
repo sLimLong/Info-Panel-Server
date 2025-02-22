@@ -1,0 +1,46 @@
+<config>
+	<append xpath="/controls">
+		<infopanel>
+			<rect controller="CharacterFrameWindow" pos="${posx},${posy}">
+ 				<panel name="header" pos="99999,99999" width="0" height="0">
+					<sprite depth="2" name="windowIcon" pos="99999,99999" width="0" height="0"/>
+					<label depth="2" name="characterName" pos="99999,99999" width="0" height="0"/>
+					<sprite depth="2" name="windowIcon" pos="99999,99999" width="0" height="0"/>
+					<label depth="2" name="levelNumber" pos="99999,99999" width="0" height="0"/>
+				</panel>
+				<rect depth="1" name="searchControls">
+					<sprite depth="8" name="backgroundMain" pos="99999,99999" width="0" height="0"/>
+					<button depth="8" visible="{showstats}" name="characterButton" style="press" width="1" height="1" pivot="center" collider_scale="9000" selected="true">
+						<sprite color="0,0,0,200" type="sliced" width="99999" height="99999" pos="-700,1500" pivot="center" globalopacity="true" />
+					</button>
+					<button depth="-11" name="statButton" width="200" height="59" hoverscale="1"  defaultcolor="[mediumGrey]" hovercolor="[white]" disabledcolor="[mediumGrey]" hoversprite="ui_game_select_row" pivot="center" type="sliced">
+						<label style="header.name" pos="0,0" pivot="center" justify="center" text_key="${button_key}" />						
+						<sprite depth="-11" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="200" height="59" color="[darkGrey]" type="sliced" pivot="center" globalopacity="true" globalopacitymod="1.8" />
+					</button>
+					<button depth="4" name="coreStatButton" style="icon30px, press" pos="99999,99999" width="0" height="0" sprite="ui_game_symbol_trophy" pivot="center"/>
+				</rect>
+				<rect>
+					<panel name="previewFrameSDCS" pos="99999,99999" width="0" height="0">
+						<rect>
+							<sprite depth="8" name="backgroundMain" pos="99999,99999" width="0" height="0"/>
+							<texture depth="2" name="playerPreviewSDCS" pos="99999,99999" size="1,1"/>
+						</rect>
+					</panel>
+					<panel name="equipment" pos="99999,99999" width="0" height="0">
+						<grid name="inventory"></grid>
+					</panel>
+				</rect>
+				<rect visible="{showcharactersdcs}"></rect>
+				<rect depth="62" pos="${-350-posx},${150-posy}"  visible="{showstats}">
+					<sprite depth="63" color="[black]" type="sliced" width="1440" height="900" globalopacity="true" globalopacitymod="1.8" />
+					<sprite depth="64" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="1440" height="900" color="[black]" type="sliced" fillcenter="false" />
+					<sprite depth="66" color="[black]" type="sliced" width="1440" height="50" globalopacity="true" />
+					<sprite name="border" depth="66" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" />
+					<label depth="67" name="nameText" pos="6,-5" text_key="${button_key}" color="[white]" width="1440" height="338" />
+					<label depth="67" name="description	Text" pos="6,-50" text_key="${description}" parse_actions="true" width="996" height="746" />					
+				</rect>
+				<rect visible="{showcore}"></rect>
+			</rect>
+		</infopanel>		
+	</append>
+</config>

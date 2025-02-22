@@ -1,0 +1,123 @@
+﻿<config>
+	<append xpath="/windows">
+		<window name="LHGMainA" depth="51" width="390" height="688" cursor_area="true">
+			<panel depth="23" controller="CharacterFrameWindow" pos="-980,80" width="500" height="62" disableautobackground="true" on_press="true">
+				<panel name="header" pos="99999,99999" width="0" height="0">
+					<sprite depth="2" name="windowIcon" pos="99999,99999" width="0" height="0"/>
+					<label depth="2" name="characterName" pos="99999,99999" width="0" height="0"/>
+					<sprite depth="2" name="windowIcon" pos="99999,99999" width="0" height="0"/>
+					<label depth="2" name="levelNumber" pos="99999,99999" width="0" height="0"/>
+				</panel>
+				<rect depth="2" name="searchControls" width="327" height="43" pos="349,320">
+					<!-- <texture depth="9" pos="260,80" width="420" height="126" pivot="center" texture="@https://imgur.com/zT0P8UJ.png"/>  -->
+					<label depth="9" pos="360,80" style="header.name" height="32" width="317" pivot="center" color="[darkGrey]" text_key="name_server"/>
+					<sprite depth="8" name="backgroundMain" pos="99999,99999" width="0" height="0"/>
+					<button name="characterButton" style="press" width="1" height="1" pos="140,-600" collider_scale="80.0" pivot="center" selected="true">
+						<label style="header.name" width="100" height="40" pos="-35,17" text_key="Page 1"/>
+						<sprite name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="100" height="40" color="[darkGrey]" type="sliced" pivot="center" globalopacity="true" globalopacitymod="1.8"/>
+					</button>
+					<button name="statButton" style="press" width="1" height="1" pos="400,-600" collider_scale="80.0" pivot="center">
+						<label style="header.name" width="100" height="40" pos="-35,17" text_key="Page 2"/>
+						<sprite name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="100" height="40" color="[darkGrey]" type="sliced" pivot="center" globalopacity="true" globalopacitymod="1.8"/>
+					</button>
+					<button depth="4" name="coreStatButton" style="icon30px, press" pos="99999,99999" width="0" height="0" sprite="ui_game_symbol_trophy" pivot="center"/>
+				</rect>
+				<rect>
+					<panel name="previewFrameSDCS" pos="99999,99999" width="0" height="0" gamepad_selectable="false">
+						<rect>
+							<sprite depth="8" name="backgroundMain" pos="99999,99999" width="0" height="0"/>
+							<texture depth="2" name="playerPreviewSDCS" material="Materials/Transparent Colored" pos="99999,99999" size="1,1"/>
+						</rect>
+					</panel>
+					 					<panel name="equipment" pos="99999,99999" width="0" height="0">
+						<grid name="inventory"/>
+					</panel> 
+				</rect>
+				<rect visible="{showcharactersdcs}" pos="485,200">
+					<infopanel button_key="button1" posx="0" posy="0" description="Text1"/>
+					<infopanel button_key="button2" posx="280" posy="0" description="Text2"/>
+					<infopanel button_key="button3" posx="0" posy="-120" description="Text3"/>
+					<infopanel button_key="button4" posx="280" posy="-120" description="Text4"/>
+					<infopanel button_key="button5" posx="0" posy="-240" description="Text5"/>
+					<infopanel button_key="button6" posx="280" posy="-240" description="Text6"/>
+					<infopanel button_key="button7" posx="0" posy="-360" description="Text7"/>
+					<infopanel button_key="button8" posx="280" posy="-360" description="Text8"/>
+				</rect>
+				<rect visible="{showstats}" pos="485,200">
+					<infopanel button_key="button9" posx="0" posy="0" description="Text9"/>
+					<infopanel button_key="button10" posx="280" posy="0" description="Text10"/>
+					<infopanel button_key="button11" posx="0" posy="-120" description="Text11"/>
+					<infopanel button_key="button12" posx="280" posy="-120" description="Text12"/>
+					<infopanel button_key="button13" posx="0" posy="-240" description="Text13"/>
+					<infopanel button_key="button14" posx="280" posy="-240" description="Text14"/>
+					<infopanel button_key="button15" posx="0" posy="-360" description="Text15"/>
+					<infopanel button_key="button16" posx="280" posy="-360" description="Text16"/>
+				</rect>
+				<rect visible="{showcore}"/>
+				<rect depth="50" name="links" width="36" height="36" pos="450,-385">
+					<rect name="link1" pos="1,0" pivot="center">
+						<button depth="-11" name="statButton1" style="press" width="150" height="59" hoverscale="1"  defaultcolor="[mediumGrey]" hovercolor="[white]" disabledcolor="[mediumGrey]" hoversprite="ui_game_select_row" pivot="center" type="sliced">
+							<label depth="9" pos="38,0" style="header.name" height="32" width="150" pivot="center" color="[white]" text_key="button_url1"/>
+							<sprite depth="-11" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="150" height="59" color="[darkGrey]" type="sliced" pivot="center" globalopacity="true" globalopacitymod="1.8"/>
+						</button>
+						<rect controller="NewsWindow" sources="https://lh-games.ru/InfoPanel/Discord.xml">
+							<button depth="49" name="btnLink" pos="-18,16" height="59" width="120" hoverscale="1" defaultcolor="0,0,0,1" disabledcolor="0,0,0,1" hovercolor="0,0,0,1" type="sliced" enabled="{has_link}" gamepad_selectable="{has_news}" tooltip_key="lhg_link1"/>
+						</rect>
+					</rect>
+					<rect name="link2" pos="180,0" pivot="center">
+						<button depth="-11" name="statButton1" style="press" width="150" height="59" hoverscale="1"  defaultcolor="[mediumGrey]" hovercolor="[white]" disabledcolor="[mediumGrey]" hoversprite="ui_game_select_row" pivot="center" type="sliced">
+							<label depth="9" pos="38,0" style="header.name" height="32" width="150" pivot="center" color="[white]" text_key="button_url2"/>
+							<sprite depth="-11" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="150" height="59" color="[darkGrey]" type="sliced" pivot="center" globalopacity="true" globalopacitymod="1.8"/>
+						</button>
+						<rect controller="NewsWindow" sources="https://lh-games.ru/InfoPanel/main.xml">
+							<button depth="49" name="btnLink" pos="-18,16" height="59" width="120" hoverscale="1" defaultcolor="0,0,0,1" disabledcolor="0,0,0,1" hovercolor="0,0,0,1" type="sliced" enabled="{has_link}" gamepad_selectable="{has_news}" tooltip_key="lhg_link2"/>
+						</rect>
+					</rect>
+					<rect name="link3" pos="360,0" pivot="center">
+						<button depth="-11" name="statButton1" style="press" width="150" height="59" hoverscale="1"  defaultcolor="[mediumGrey]" hovercolor="[white]" disabledcolor="[mediumGrey]" hoversprite="ui_game_select_row" pivot="center" type="sliced">
+							<label depth="9" pos="38,0" style="header.name" height="32" width="150" pivot="center" color="[white]" text_key="button_url3"/>
+							<sprite depth="-11" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="150" height="59" color="[darkGrey]" type="sliced" pivot="center" globalopacity="true" globalopacitymod="1.8"/>
+						</button>
+						<rect controller="NewsWindow" sources="https://lh-games.ru/InfoPanel/map.xml">
+							<button depth="49" name="btnLink" pos="-18,16" height="59" width="120" hoverscale="1" defaultcolor="0,0,0,1" disabledcolor="0,0,0,1" hovercolor="0,0,0,1" type="sliced" enabled="{has_link}" gamepad_selectable="{has_news}" tooltip_key="lhg_link3"/>
+						</rect>
+					</rect>
+				</rect>
+			</panel>
+		</window>
+		<window name="LHGOverlay" anchor="LeftTop" depth="40">
+			<panel name="content" width="800" height="76" depth="10" pos="0,20" disableautobackground="true">
+				<texture on_drag="true" on_press="true" size="768,1024" texture="@https://gs.lh-games.ru/pda/Ui_pda.png" depth="11" pos="260,-30"/>
+				<!--<rect name="background" width="1920" height="1080" depth="11" pos="0, 0" >		
+				</rect>-->
+			</panel>
+			<!-- <sprite depth="-10" color="0,0,0,255"  pos="500,0" type="sliced" width="800" height="1036" globalopacity="true" globalopacitymod="1.2" /> -->
+		</window>
+		
+		<window depth="80" name="window_lhg_time" width="400" height="32" pos="-305,-100" controller="MapStats" anchor="CenterTop">		
+<sprite depth="2" name="dayTimeIcon" width="24" height="24" pos="10,-16" sprite="ui_game_symbol_clock" color="[iconColor]" foregroundlayer="true" visible="{showtime}"/>
+					<label depth="80" name="dayTimeLabel" pos="40,-18" width="250" height="28" text="[DECEA3]{mapdaytime}[-]" font_size="26" visible="{showtime}"/>
+<sprite depth="2" name="dayTimeIcon" width="24" height="24" pos="190,-16" sprite="ui_game_symbol_ping" color="[iconColor]" foregroundlayer="true" visible="{showtime}"/>
+<button pos="-68,-830" depth="80" name="btnClearInventory" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" style="icon32px, press, hover" sound="[paging_click]" visible="True" defaultcolor="[darkGrey]" hovercolor="[red]" disabledcolor="[red]" controller="BackpackWindow" />
+
+		</window>
+
+<!-- 	<window name="windowLocationlhg" pos="-230,-100" width="240" height="60" depth="80" controller="Location">
+		<grid pos="125, -28" pivot="center" cols="8" cell_width="18" cell_height="16">
+			<sprite depth="2" name="windowicon" width="16" height="16" sprite="ui_game_symbol_skull" color="{difficultycolor1}" visible="{visible1}" />
+			<sprite depth="2" name="windowicon" width="16" height="16" sprite="ui_game_symbol_skull" color="{difficultycolor2}" visible="{visible2}"/>
+			<sprite depth="2" name="windowicon" width="16" height="16" sprite="ui_game_symbol_skull" color="{difficultycolor3}" visible="{visible3}"/>
+			<sprite depth="2" name="windowicon" width="16" height="16" sprite="ui_game_symbol_skull" color="{difficultycolor4}" visible="{visible4}"/>
+			<sprite depth="2" name="windowicon" width="16" height="16" sprite="ui_game_symbol_skull" color="{difficultycolor5}" visible="{visible5}"/>
+			<sprite depth="2" name="windowicon" width="16" height="16" sprite="ui_game_symbol_skull" color="{difficultycolor6}" visible="{visible6}"/>
+			<sprite depth="2" name="windowicon" width="16" height="16" sprite="ui_game_symbol_skull" color="{difficultycolor7}" visible="{visible7}"/>
+			<rect width="16" height="16" visible="{visible_half}">
+				<sprite depth="2" name="windowicon" width="16" height="16" sprite="ui_game_symbol_skull" type="filled" fill="0.5" color="255,128,0"/>
+				<sprite depth="2" name="windowicon" width="16" height="16" sprite="ui_game_symbol_skull" type="filled" fill="0.5" fillinvert="true"  color="[lightGrey]"/>
+			</rect>
+		</grid>
+		
+	</window> -->			
+	</append>
+</config>
+

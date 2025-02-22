@@ -1,0 +1,11 @@
+<configs>
+<append xpath="/xui/ruleset">
+	<window_group name="serverinfowindow">
+			<window name="LHGMainA"/>
+			<window name="LHGOverlay"/>
+			<window name="window_lhg_time"/>
+			<!-- <window name="windowLocationlhg"/> -->
+	</window_group>
+
+</append>
+</configs>
